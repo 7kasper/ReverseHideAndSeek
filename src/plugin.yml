@@ -1,0 +1,36 @@
+name: ReverseHideAndSeek
+main: nl.kaspermuller.reversehideandseek.ReverseHideAndSeek
+description: Reverse hide and seek game.
+author: 7kasper
+version: 0.1
+api-version: 1.20
+
+permissions:
+  reversehideandseek.*:
+    description: Gives access to all ReverseHideAndSeek stuff.
+    children:
+      reversehideandseek.hide: true
+      reversehideandseek.seek: true
+      reversehideandseek.setup: true
+  reversehideandseek.hide:
+    description: Allows you to hide with the plugin.
+    default: true
+  reversehideandseek.seek:
+    description: Allows you to seek. Can be used to exclude players from the game.
+    default: true
+  reversehideandseek.setup:
+    description: Allows you to setup / start a game.
+    default: op
+commands:
+   seek:
+      description: Start reverse hide and seek
+      usage: /<command> player [radius]
+      permission: reversehideandseek.setup
+   seekman:
+      description: Start reverse hide and seek that only stops manually.
+      usage: /<command> player [radius]
+      permission: reversehideandseek.setup
+   stopseek:
+      description: Stops hide and seek game
+      usage: /<command>
+      permission: reversehideandseek.setup
